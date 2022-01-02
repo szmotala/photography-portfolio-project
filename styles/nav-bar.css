@@ -1,0 +1,98 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 1em 5rem;
+}
+
+.header .nav_bar {
+  width: 35em;
+  font-size: var(--h2-font);
+  text-transform: uppercase;
+  border-bottom: 1px solid #cdcaca;
+  padding: 0 5em 1em;
+  margin: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .nav_bar .nav_ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.header .nav_bar .nav_ul .nav_item {
+  background: none;
+  width: 5rem;
+  text-align: center;
+}
+
+.header .nav_bar .nav_ul .nav_item a {
+  text-decoration: none;
+  color: #0d0d0d;
+}
+
+.header .nav_bar .nav_ul .nav_item a:hover {
+  font-weight: 500;
+}
+
+.header .nav_bar .nav_ul .nav_item a.active {
+  font-weight: 500;
+}
+
+.social_media {
+  padding: 0.7em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 15em;
+  margin: 0;
+}
+
+.social_media li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social_media li a:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+/*# sourceMappingURL=nav-bar.css.map */
