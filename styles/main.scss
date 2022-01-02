@@ -22,6 +22,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 4em 0 8em;
 
   .personal {
@@ -114,7 +115,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #ffffff99;
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -211,5 +212,13 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@supports (
+  not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)))
+) {
+  .img-window {
+    background-color: rgba(255, 255, 255, 0.95);
   }
 }
