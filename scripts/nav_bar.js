@@ -4,5 +4,7 @@ items.forEach((item) => {
   const href = item.getAttribute("href");
   if (window.location.href.includes(href)) {
     item.classList.add("active");
+  } else if (window.location.pathname == "/" && href == "index.html") {
+    item.classList.add("active");
   }
 });
