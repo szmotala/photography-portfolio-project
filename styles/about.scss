@@ -26,6 +26,10 @@ body {
   scroll-behavior: smooth;
   position: relative;
 
+  @media screen and (max-width: 900px) {
+    scroll-snap-type: y proximity;
+  }
+
   .header {
     .social_media {
       display: none;
@@ -80,6 +84,11 @@ body {
     @media screen and (max-width: 900px) {
       padding: 1rem 4rem;
     }
+
+    @media screen and (max-width: 600px) {
+      font-size: 4vw;
+      padding: 1rem 2rem;
+    }
   }
 
   .section {
@@ -90,6 +99,10 @@ body {
     max-width: 100%;
     margin: 0 auto;
     height: 100vh;
+
+    @media screen and (max-width: 600px) {
+      height: 130vh;
+    }
 
     .section_h1 {
       font-size: var(--section-h1);
@@ -119,7 +132,7 @@ body {
     background-position-x: right;
 
     @media screen and (max-width: 900px) {
-      background-position-x: 40%;
+      background-position-x: 70%;
     }
 
     .section_h1 {
@@ -188,6 +201,10 @@ body {
 
   .social {
     background-color: black;
+
+    @media screen and (min-width: 300px) {
+      height: 100vh;
+    }
 
     .social-media-div {
       display: flex;

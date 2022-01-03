@@ -28,6 +28,13 @@ body {
   position: relative;
 }
 
+@media screen and (max-width: 900px) {
+  .content {
+    -ms-scroll-snap-type: y proximity;
+        scroll-snap-type: y proximity;
+  }
+}
+
 .content .header .social_media {
   display: none;
 }
@@ -103,6 +110,13 @@ body {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .content p {
+    font-size: 4vw;
+    padding: 1rem 2rem;
+  }
+}
+
 .content .section {
   scroll-snap-align: center;
   display: -webkit-box;
@@ -118,6 +132,12 @@ body {
   max-width: 100%;
   margin: 0 auto;
   height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  .content .section {
+    height: 130vh;
+  }
 }
 
 .content .section .section_h1 {
@@ -157,7 +177,7 @@ body {
 
 @media screen and (max-width: 900px) {
   .content .about-me {
-    background-position-x: 40%;
+    background-position-x: 70%;
   }
 }
 
@@ -242,6 +262,12 @@ body {
 
 .content .social {
   background-color: black;
+}
+
+@media screen and (min-width: 300px) {
+  .content .social {
+    height: 100vh;
+  }
 }
 
 .content .social .social-media-div {
