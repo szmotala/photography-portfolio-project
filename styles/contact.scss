@@ -18,40 +18,21 @@ body {
   height: 100vh;
 }
 
+.header {
+  .social_media {
+    display: none;
+
+    @media screen and (max-width: 900px) {
+      display: flex;
+    }
+  }
+}
+
 main {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .hero {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin: 4em 0 8em;
-
-    .name {
-      font-size: var(--h1-font);
-      margin: 0;
-      font-weight: 500;
-      animation: intro_anim 1s forwards;
-      opacity: 0;
-      color: #2d2d2d;
-    }
-
-    .subtitle {
-      font-size: var(--h2-font);
-      margin-top: 0;
-      padding-left: 0.1em;
-      text-transform: uppercase;
-      color: #cdcaca;
-      font-weight: 400;
-      letter-spacing: 0.3rem;
-      opacity: 0;
-      animation: intro_anim 1s forwards 0.5s;
-    }
-  }
 
   .contact-section {
     display: flex;
@@ -68,6 +49,11 @@ main {
       margin-bottom: 1.5rem;
       font-size: 24px;
       color: #8f8f8f;
+
+      @media screen and (max-width: 900px) {
+        font-size: 4vw;
+        font-weight: 500;
+      }
     }
 
     .direct {
@@ -82,6 +68,11 @@ main {
         color: #2d2d2d;
         font-weight: 600;
         position: relative;
+
+        @media screen and (max-width: 900px) {
+          font-size: 5.5vw;
+          font-weight: 500;
+        }
 
         &::before {
           content: "";
@@ -112,7 +103,11 @@ main {
       animation: intro_anim 1s forwards 1.5s;
 
       ul {
-        width: 20rem;
+        max-lines: 20rem;
+
+        @media screen and (max-width: 900px) {
+          max-width: 40vw;
+        }
 
         img {
           width: 40px;

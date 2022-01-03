@@ -1,0 +1,55 @@
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 4em 0 8rem;
+}
+
+@media screen and (max-width: 900px) {
+  .hero {
+    font-size: 10vw;
+  }
+}
+
+.hero .name {
+  font-size: var(--h1-font);
+  margin: 0;
+  font-weight: 500;
+  -webkit-animation: intro_anim 1s forwards;
+          animation: intro_anim 1s forwards;
+  opacity: 0;
+  color: #2d2d2d;
+}
+
+@media screen and (max-width: 900px) {
+  .hero .name {
+    font-size: 10vw;
+  }
+}
+
+.hero .subtitle {
+  font-size: var(--h2-font);
+  margin-top: 0;
+  padding-left: 0.1em;
+  text-transform: uppercase;
+  color: #cdcaca;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  opacity: 0;
+  -webkit-animation: intro_anim 1s forwards 0.5s;
+          animation: intro_anim 1s forwards 0.5s;
+}
+
+@media screen and (max-width: 900px) {
+  .hero .subtitle {
+    font-size: 4vw;
+  }
+}
+/*# sourceMappingURL=hero.css.map */

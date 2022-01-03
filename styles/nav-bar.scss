@@ -1,3 +1,64 @@
+.menu-btn-container {
+  display: none;
+  height: 40px;
+  width: 40px;
+  background: none;
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  padding: 0;
+  margin: 0;
+  z-index: 1500;
+
+  @media screen and (max-width: 900px) {
+    display: flex;
+    align-items: center;
+  }
+
+  &.active {
+    .menu-btn {
+      transform: translateX(-40px);
+      background: transparent;
+
+      &::before {
+        transform: translateX(40px) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateX(40px) rotate(-45deg);
+      }
+    }
+  }
+
+  .menu-btn {
+    background: #2d2d2d;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    transition: all 0.5s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background: #2d2d2d;
+      width: 100%;
+      height: 4px;
+      border-radius: 10px;
+      transform-origin: center;
+      transition: all 0.5s;
+    }
+
+    &::before {
+      transform: translateY(-0.7rem);
+    }
+
+    &::after {
+      transform: translateY(0.7rem);
+    }
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -15,6 +76,12 @@
     background-color: white;
     overflow: hidden;
     transform: scaleX(0);
+    transition: all 0.7s ease-in-out;
+    transform-origin: right;
+
+    &.active {
+      transform: scaleX(1);
+    }
   }
 
   .nav_bar {
@@ -27,11 +94,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @media screen and (max-width: 900px) {
-      width: 100%;
-      padding: 0 0 1em;
-    }
 
     .nav_ul {
       display: flex;
@@ -81,6 +143,10 @@
   justify-content: space-between;
   width: 15em;
   margin: 0;
+
+  @media screen and (max-width: 900px) {
+    max-width: 40vw;
+  }
 
   li {
     display: flex;

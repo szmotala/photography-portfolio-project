@@ -18,6 +18,18 @@ body {
   height: 100vh;
 }
 
+.header .social_media {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .header .social_media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 main {
   height: 100%;
   display: -webkit-box;
@@ -30,43 +42,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-main .hero {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 4em 0 8em;
-}
-
-main .hero .name {
-  font-size: var(--h1-font);
-  margin: 0;
-  font-weight: 500;
-  -webkit-animation: intro_anim 1s forwards;
-          animation: intro_anim 1s forwards;
-  opacity: 0;
-  color: #2d2d2d;
-}
-
-main .hero .subtitle {
-  font-size: var(--h2-font);
-  margin-top: 0;
-  padding-left: 0.1em;
-  text-transform: uppercase;
-  color: #cdcaca;
-  font-weight: 400;
-  letter-spacing: 0.3rem;
-  opacity: 0;
-  -webkit-animation: intro_anim 1s forwards 0.5s;
-          animation: intro_anim 1s forwards 0.5s;
 }
 
 main .contact-section {
@@ -95,6 +70,13 @@ main .contact-section h3 {
   color: #8f8f8f;
 }
 
+@media screen and (max-width: 900px) {
+  main .contact-section h3 {
+    font-size: 4vw;
+    font-weight: 500;
+  }
+}
+
 main .contact-section .direct {
   opacity: 0;
   -webkit-animation: intro_anim 1s forwards 1s;
@@ -109,6 +91,13 @@ main .contact-section .direct a {
   color: #2d2d2d;
   font-weight: 600;
   position: relative;
+}
+
+@media screen and (max-width: 900px) {
+  main .contact-section .direct a {
+    font-size: 5.5vw;
+    font-weight: 500;
+  }
 }
 
 main .contact-section .direct a::before {
@@ -149,7 +138,13 @@ main .contact-section .social {
 }
 
 main .contact-section .social ul {
-  width: 20rem;
+  max-lines: 20rem;
+}
+
+@media screen and (max-width: 900px) {
+  main .contact-section .social ul {
+    max-width: 40vw;
+  }
 }
 
 main .contact-section .social ul img {

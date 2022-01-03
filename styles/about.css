@@ -28,44 +28,32 @@ body {
   position: relative;
 }
 
+.content .header .social_media {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .content .header .social_media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .content .hero {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 0 auto;
   height: calc(100vh - var(--nav-bar-height));
   scroll-margin-top: 150px;
   scroll-snap-align: center;
 }
 
-.content .hero .name {
-  font-size: var(--h1-font);
-  margin: 0;
-  font-weight: 500;
-  -webkit-animation: intro_anim 1s forwards;
-          animation: intro_anim 1s forwards;
-  opacity: 0;
-  color: #2d2d2d;
-}
-
-.content .hero .subtitle {
-  font-size: var(--h2-font);
-  margin-top: 0;
-  padding-left: 0.1em;
-  text-transform: uppercase;
-  color: #cdcaca;
-  font-weight: 400;
-  letter-spacing: 0.3rem;
-  opacity: 0;
-  -webkit-animation: intro_anim 1s forwards 0.5s;
-          animation: intro_anim 1s forwards 0.5s;
+@media screen and (max-width: 900px) {
+  .content .hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+  }
 }
 
 .content .hero .scroll-down {
@@ -84,7 +72,7 @@ body {
 }
 
 .content .hero .scroll-down img {
-  height: 0.8rem;
+  height: 1rem;
 }
 
 .content .hero .scroll-down img:nth-child(1) {
@@ -107,6 +95,12 @@ body {
   text-align: justify;
   margin: 0 auto;
   max-width: 770px;
+}
+
+@media screen and (max-width: 900px) {
+  .content p {
+    padding: 1rem 4rem;
+  }
 }
 
 .content .section {
@@ -137,6 +131,12 @@ body {
   margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 900px) {
+  .content .section .section_h1 {
+    font-size: 6vw;
+  }
+}
+
 .content .about-me {
   width: 100%;
   background-color: black;
@@ -155,7 +155,13 @@ body {
   background-position-x: right;
 }
 
-.content .about-me h1 {
+@media screen and (max-width: 900px) {
+  .content .about-me {
+    background-position-x: 40%;
+  }
+}
+
+.content .about-me .section_h1 {
   color: #cfcfcf;
 }
 
@@ -166,8 +172,6 @@ body {
 .content .activity p {
   color: #2d2d2d;
   margin-top: 1rem;
-  padding: 1rem;
-  text-align: justify;
 }
 
 .content .activity .activities {
@@ -188,6 +192,13 @@ body {
   margin-top: 2em;
 }
 
+@media screen and (max-width: 900px) {
+  .content .activity .activities {
+    -ms-grid-columns: (minmax(100px, 200px))[3];
+        grid-template-columns: repeat(3, minmax(100px, 200px));
+  }
+}
+
 .content .activity .activities .activity-div {
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
@@ -201,8 +212,9 @@ body {
 }
 
 .content .activity .activities .activity-div img {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -220,6 +232,12 @@ body {
   color: #3d3d3d;
   text-transform: uppercase;
   letter-spacing: 0.06rem;
+}
+
+@media screen and (max-width: 900px) {
+  .content .activity .activity-about .desc-activity-title {
+    font-size: 4vw;
+  }
 }
 
 .content .social {

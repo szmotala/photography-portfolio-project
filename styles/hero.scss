@@ -1,0 +1,40 @@
+.hero {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 4em 0 8rem;
+
+  @media screen and (max-width: 900px) {
+    font-size: 10vw;
+  }
+
+  .name {
+    font-size: var(--h1-font);
+    margin: 0;
+    font-weight: 500;
+    animation: intro_anim 1s forwards;
+    opacity: 0;
+    color: #2d2d2d;
+
+    @media screen and (max-width: 900px) {
+      font-size: 10vw;
+    }
+  }
+
+  .subtitle {
+    font-size: var(--h2-font);
+    margin-top: 0;
+    padding-left: 0.1em;
+    text-transform: uppercase;
+    color: #cdcaca;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    opacity: 0;
+    animation: intro_anim 1s forwards 0.5s;
+
+    @media screen and (max-width: 900px) {
+      font-size: 4vw;
+    }
+  }
+}

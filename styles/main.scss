@@ -17,35 +17,6 @@ body {
   padding: 0 0 3rem;
 }
 
-.hero {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin: 4em 0 8em;
-
-  .name {
-    font-size: var(--h1-font);
-    margin: 0;
-    font-weight: 500;
-    animation: intro_anim 1s forwards;
-    opacity: 0;
-    color: #2d2d2d;
-  }
-
-  .subtitle {
-    font-size: var(--h2-font);
-    margin-top: 0;
-    padding-left: 0.1em;
-    text-transform: uppercase;
-    color: #cdcaca;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    opacity: 0;
-    animation: intro_anim 1s forwards 0.5s;
-  }
-}
-
 .photo-session {
   display: flex;
   justify-content: center;
@@ -75,6 +46,7 @@ body {
     @media screen and (max-width: 900px) {
       writing-mode: horizontal-tb;
       width: 100%;
+      margin-bottom: 1rem;
     }
 
     h3 {
@@ -101,12 +73,10 @@ body {
     column-gap: 10px;
     row-gap: 10px;
 
-    @media screen and (max-width: 300px) {
-    }
     @media screen and (max-width: 900px) {
       grid-template-columns: repeat(2, minmax(100px, 250px));
-      column-gap: 5px;
-      row-gap: 5px;
+      column-gap: 7px;
+      row-gap: 7px;
     }
 
     .picture {

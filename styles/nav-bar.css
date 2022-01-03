@@ -1,3 +1,75 @@
+.menu-btn-container {
+  display: none;
+  height: 40px;
+  width: 40px;
+  background: none;
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  padding: 0;
+  margin: 0;
+  z-index: 1500;
+}
+
+@media screen and (max-width: 900px) {
+  .menu-btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.menu-btn-container.active .menu-btn {
+  -webkit-transform: translateX(-40px);
+          transform: translateX(-40px);
+  background: transparent;
+}
+
+.menu-btn-container.active .menu-btn::before {
+  -webkit-transform: translateX(40px) rotate(45deg);
+          transform: translateX(40px) rotate(45deg);
+}
+
+.menu-btn-container.active .menu-btn::after {
+  -webkit-transform: translateX(40px) rotate(-45deg);
+          transform: translateX(40px) rotate(-45deg);
+}
+
+.menu-btn-container .menu-btn {
+  background: #2d2d2d;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.menu-btn-container .menu-btn::before, .menu-btn-container .menu-btn::after {
+  content: "";
+  position: absolute;
+  background: #2d2d2d;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.menu-btn-container .menu-btn::before {
+  -webkit-transform: translateY(-0.7rem);
+          transform: translateY(-0.7rem);
+}
+
+.menu-btn-container .menu-btn::after {
+  -webkit-transform: translateY(0.7rem);
+          transform: translateY(0.7rem);
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,6 +99,14 @@
     overflow: hidden;
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
+    -webkit-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  .header.active {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 
@@ -46,13 +126,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-@media screen and (max-width: 900px) {
-  .header .nav_bar {
-    width: 100%;
-    padding: 0 0 1em;
-  }
 }
 
 .header .nav_bar .nav_ul {
@@ -119,6 +192,12 @@
           justify-content: space-between;
   width: 15em;
   margin: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .social_media {
+    max-width: 40vw;
+  }
 }
 
 .social_media li {
