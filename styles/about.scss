@@ -27,7 +27,7 @@ body {
   position: relative;
 
   @media screen and (max-width: 900px) {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: none;
   }
 
   .header {
@@ -153,7 +153,6 @@ body {
     .activities {
       display: grid;
       grid-template-columns: repeat(3, 250px);
-      // grid-template-columns: repeat(3, 30vw);
       column-gap: 10px;
       align-items: center;
       justify-content: center;
@@ -164,6 +163,10 @@ body {
       @media screen and (max-width: 900px) {
         grid-template-columns: repeat(3, minmax(30vw, 250px));
         column-gap: 5px;
+
+        @supports not (aspect-ratio: 1) {
+          grid-template-columns: repeat(3, 30vw);
+        }
       }
 
       .activity-div {

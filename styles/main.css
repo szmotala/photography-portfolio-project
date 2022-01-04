@@ -118,8 +118,8 @@ body {
 
 @media screen and (max-width: 900px) {
   .photo-session .content {
-    -ms-grid-columns: (minmax(30vw, 250px))[2];
-        grid-template-columns: repeat(2, minmax(30vw, 250px));
+    -ms-grid-columns: (minmax(40vw, 250px))[2];
+        grid-template-columns: repeat(2, minmax(40vw, 250px));
     -webkit-column-gap: 5px;
             column-gap: 5px;
     row-gap: 5px;

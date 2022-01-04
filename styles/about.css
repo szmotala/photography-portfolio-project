@@ -30,8 +30,8 @@ body {
 
 @media screen and (max-width: 900px) {
   .content {
-    -ms-scroll-snap-type: y proximity;
-        scroll-snap-type: y proximity;
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
   }
 }
 
@@ -218,6 +218,12 @@ body {
         grid-template-columns: repeat(3, minmax(30vw, 250px));
     -webkit-column-gap: 5px;
             column-gap: 5px;
+  }
+  @supports not (aspect-ratio: 1) {
+    .content .activity .activities {
+      -ms-grid-columns: (30vw)[3];
+          grid-template-columns: repeat(3, 30vw);
+    }
   }
 }
 

@@ -31,6 +31,43 @@ function openImgAnim(object, parent) {
   );
 }
 
+function openImgAnimMobile(object, parent) {
+  gsap.set(parent, { visibility: "visible" });
+  gsap.fromTo(
+    object,
+    {
+      scaleY: 0,
+      scaleX: 0,
+      transformOrigin: "center",
+    },
+    {
+      scaleY: 1,
+      scaleX: 1,
+      duration: 0.3,
+    }
+  );
+}
+
+function closeImgAnimMobile(object, parent) {
+  gsap.fromTo(
+    object,
+    {
+      scaleY: 1,
+      scaleX: 1,
+      transformOrigin: "center",
+    },
+    {
+      scaleY: 0,
+      scaleX: 0,
+      duration: 0.3,
+    }
+  );
+  gsap.set(parent, {
+    visibility: "hidden",
+    delay: 0.2,
+  });
+}
+
 gsap.registerPlugin(ScrollTrigger);
 sessions = document.querySelectorAll(".photo-session");
 sessions.forEach((session) => {

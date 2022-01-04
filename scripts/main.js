@@ -28,7 +28,6 @@ function changeImg(direction) {
   currIndex += direction;
   if (currIndex < 0) {
     currIndex = array.length - 1;
-    console.log(array.length - 1);
   } else if (currIndex > array.length - 1) {
     currIndex = 0;
   }
@@ -70,12 +69,12 @@ function setEventsOnMobile() {
     "touchend",
     (e) => {
       endPoint = e.changedTouches.item(0);
-      if (endPoint.pageX - startPoint.pageX > screen.width / 3) {
+      if (endPoint.pageX - startPoint.pageX > screen.width * 0.15) {
         changeImg(-1);
-      } else if (endPoint.pageX - startPoint.pageX < -screen.width / 3) {
+      } else if (endPoint.pageX - startPoint.pageX < -screen.width * 0.15) {
         changeImg(1);
-      } else if (startPoint.pageY - endPoint.pageY > screen.height / 4) {
-        closeImg();
+      } else if (startPoint.pageY - endPoint.pageY > screen.height * 0.1) {
+        closeImgAnimMobile(".img-box", ".img-window");
       }
     },
     false
@@ -98,12 +97,11 @@ images.forEach((image) => {
     }
     setDataFromImage(image);
     if (navigator.userAgent.match(reg)) {
-      console.log("hello android");
       setEventsOnMobile();
+      openImgAnimMobile(".img-box", ".img-window");
     } else {
-      console.log("hello desktop");
       setEventsOnDesktop();
+      openImgAnim(".img-box", ".img-window");
     }
-    openImgAnim(".img-box", ".img-window");
   });
 });

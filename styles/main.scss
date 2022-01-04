@@ -76,7 +76,7 @@ body {
     row-gap: 10px;
 
     @media screen and (max-width: 900px) {
-      grid-template-columns: repeat(2, minmax(30vw, 250px));
+      grid-template-columns: repeat(2, minmax(40vw, 250px));
       column-gap: 5px;
       row-gap: 5px;
 
