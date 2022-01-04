@@ -79,6 +79,10 @@ body {
       grid-template-columns: repeat(2, minmax(30vw, 250px));
       column-gap: 5px;
       row-gap: 5px;
+
+      @supports not (aspect-ratio: 1) {
+        grid-template-columns: repeat(2, 40vw);
+      }
     }
 
     .picture {
@@ -95,8 +99,8 @@ body {
         aspect-ratio: 1;
 
         @supports not (aspect-ratio: 1) {
-          width: 30vw;
-          height: 30vw;
+          width: 40vw;
+          height: 40vw;
         }
       }
 

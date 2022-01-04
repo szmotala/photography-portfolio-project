@@ -124,6 +124,12 @@ body {
             column-gap: 5px;
     row-gap: 5px;
   }
+  @supports not (aspect-ratio: 1) {
+    .photo-session .content {
+      -ms-grid-columns: (40vw)[2];
+          grid-template-columns: repeat(2, 40vw);
+    }
+  }
 }
 
 .photo-session .content .picture {
@@ -148,8 +154,8 @@ body {
   }
   @supports not (aspect-ratio: 1) {
     .photo-session .content .picture {
-      width: 30vw;
-      height: 30vw;
+      width: 40vw;
+      height: 40vw;
     }
   }
 }
