@@ -13,6 +13,12 @@ let array;
 let startPoint;
 let endPoint;
 
+const reg = new RegExp(
+  "Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini",
+  "i"
+);
+let device;
+
 function closeImg() {
   img_window.removeAttribute("onclick");
   closeImgAnim(".img-box", ".img-window");
@@ -49,12 +55,13 @@ function setEventsOnDesktop() {
 function setEventsOnMobile() {
   prv_btn.style.display = "none";
   next_btn.style.display = "none";
+  img_window.removeAttribute("onclick");
 
   img_window.addEventListener(
     "touchstart",
     (e) => {
       e.preventDefault();
-      startPoint = e.touches[0];
+      startPoint = e.touches.item(0);
     },
     false
   );
@@ -62,13 +69,12 @@ function setEventsOnMobile() {
   img_window.addEventListener(
     "touchend",
     (e) => {
-      endPoint = e.changeTouches[0];
-
+      endPoint = e.changedTouches.item(0);
       if (endPoint.pageX - startPoint.pageX > screen.width / 3) {
         changeImg(-1);
       } else if (endPoint.pageX - startPoint.pageX < -screen.width / 3) {
         changeImg(1);
-      } else if (endPoint.pageY - startPoint.pageY < screen.height / 4) {
+      } else if (startPoint.pageY - endPoint.pageY > screen.height / 4) {
         closeImg();
       }
     },
@@ -91,13 +97,11 @@ images.forEach((image) => {
         break;
     }
     setDataFromImage(image);
-    if (
-      /Andrdoi|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    ) {
+    if (navigator.userAgent.match(reg)) {
+      console.log("hello android");
       setEventsOnMobile();
     } else {
+      console.log("hello desktop");
       setEventsOnDesktop();
     }
     openImgAnim(".img-box", ".img-window");
