@@ -38,3 +38,12 @@ activities.forEach((activity) => {
     document.querySelector(".desc-activity").innerHTML = "";
   });
 });
+
+const scroll_btn = document.querySelector(".scroll-down");
+scroll_btn.addEventListener(
+  "click",
+  () => {
+    document.querySelector(".about-me").scrollIntoView();
+  },
+  false
+);
