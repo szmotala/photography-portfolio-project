@@ -2,37 +2,16 @@ const images = document.querySelectorAll(".picture");
 const img_window = document.querySelector(".close-box");
 const prv_btn = document.querySelector(".prvs");
 const next_btn = document.querySelector(".next");
-let currIndex;
-let class_val;
-let array;
 
 const wedding_imgs = document.querySelector(".content.wedding").children;
 const paris_imgs = document.querySelector(".content.paris").children;
 
-images.forEach((image) => {
-  image.addEventListener("click", () => {
-    currIndex = Number(image.getAttribute("data-index"));
+let currIndex;
+let class_val;
+let array;
 
-    img_window.setAttribute("onclick", "closeImg()");
-
-    setDataFromImage(image);
-
-    class_val = image.parentElement.classList[1];
-
-    switch (class_val) {
-      case "paris":
-        array = paris_imgs;
-        break;
-      case "wedding":
-        array = wedding_imgs;
-        break;
-    }
-
-    prv_btn.setAttribute("onclick", "changeImg(-1)");
-    next_btn.setAttribute("onclick", "changeImg(1)");
-    openImgAnim(".img-box", ".img-window");
-  });
-});
+let startPoint;
+let endPoint;
 
 function closeImg() {
   img_window.removeAttribute("onclick");
@@ -59,3 +38,70 @@ function setDataFromImage(imageObj) {
   document.querySelector(".img__desc").innerHTML =
     imageObj.getAttribute("data-desc");
 }
+
+function setEventsOnDesktop() {
+  img_window.setAttribute("onclick", "closeImg()");
+
+  setDataFromImage(image);
+
+  prv_btn.setAttribute("onclick", "changeImg(-1)");
+  next_btn.setAttribute("onclick", "changeImg(1)");
+}
+
+function setEventsOnMobile() {
+  prv_btn.style.display = "none";
+  next_btn.style.display = "none";
+
+  img_window.addEventListener(
+    "touchstart",
+    (e) => {
+      e.preventDefault();
+      startPoint = e.touches[0];
+    },
+    false
+  );
+
+  img_window.addEventListener(
+    "touchend",
+    (e) => {
+      endPoint = e.changeTouches[0];
+
+      if (endPoint.pageX - startPoint.pageX > screen.width / 3) {
+        changeImg(-1);
+      } else if (endPoint.pageX - startPoint.pageX < -screen.width / 3) {
+        changeImg(1);
+      } else if (endPoint.pageY - startPoint.pageY < screen.height / 4) {
+        closeImg();
+      }
+    },
+    false
+  );
+}
+
+images.forEach((image) => {
+  image.addEventListener("click", () => {
+    currIndex = Number(image.getAttribute("data-index"));
+
+    class_val = image.parentElement.classList[1];
+
+    switch (class_val) {
+      case "paris":
+        array = paris_imgs;
+        break;
+      case "wedding":
+        array = wedding_imgs;
+        break;
+    }
+
+    if (
+      /Andrdoi|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      setEventsOnMobile();
+    } else {
+      setEventsOnDesktop();
+    }
+    openImgAnim(".img-box", ".img-window");
+  });
+});
