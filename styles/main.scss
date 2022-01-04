@@ -58,9 +58,11 @@ body {
       width: 100%;
       height: 80%;
       transform: scale(-1, -1);
+      font-size: var(--h2-font);
 
       @media screen and (max-width: 900px) {
         transform: scale(1, 1);
+        font-size: 5vw;
       }
     }
   }
@@ -74,9 +76,9 @@ body {
     row-gap: 10px;
 
     @media screen and (max-width: 900px) {
-      grid-template-columns: repeat(2, minmax(100px, 250px));
-      column-gap: 7px;
-      row-gap: 7px;
+      grid-template-columns: repeat(2, minmax(30vw, 250px));
+      column-gap: 5px;
+      row-gap: 5px;
     }
 
     .picture {
@@ -91,6 +93,11 @@ body {
         width: 100%;
         height: auto;
         aspect-ratio: 1;
+
+        @supports not (aspect-ratio: 1) {
+          width: 30vw;
+          height: 30vw;
+        }
       }
 
       &.main {

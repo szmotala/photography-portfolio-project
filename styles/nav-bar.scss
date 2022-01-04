@@ -10,7 +10,14 @@
   margin: 0;
   z-index: 1500;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (min-width: 301px) and (max-width: 900px) {
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 300px) {
+    width: 10vw;
+    height: 10vw;
     display: flex;
     align-items: center;
   }
@@ -37,6 +44,10 @@
     border-radius: 10px;
     transition: all 0.5s;
 
+    @media screen and (max-width: 300px) {
+      height: 3px;
+    }
+
     &::before,
     &::after {
       content: "";
@@ -47,14 +58,26 @@
       border-radius: 10px;
       transform-origin: center;
       transition: all 0.5s;
+
+      @media screen and (max-width: 300px) {
+        height: 3px;
+      }
     }
 
     &::before {
       transform: translateY(-0.7rem);
+
+      @media screen and (max-width: 300px) {
+        transform: translateY(-0.5rem);
+      }
     }
 
     &::after {
       transform: translateY(0.7rem);
+
+      @media screen and (max-width: 300px) {
+        transform: translateY(0.5rem);
+      }
     }
   }
 }

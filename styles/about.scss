@@ -153,6 +153,7 @@ body {
     .activities {
       display: grid;
       grid-template-columns: repeat(3, 250px);
+      // grid-template-columns: repeat(3, 30vw);
       column-gap: 10px;
       align-items: center;
       justify-content: center;
@@ -161,7 +162,8 @@ body {
       margin-top: 2em;
 
       @media screen and (max-width: 900px) {
-        grid-template-columns: repeat(3, minmax(100px, 200px));
+        grid-template-columns: repeat(3, minmax(30vw, 250px));
+        column-gap: 5px;
       }
 
       .activity-div {
@@ -172,11 +174,15 @@ body {
         }
 
         img {
-          width: 100%;
-          height: auto;
+          max-width: 100%;
           aspect-ratio: 1;
           object-fit: cover;
           object-position: center;
+
+          @supports not (aspect-ratio: 1) {
+            width: 30vw;
+            height: 30vw;
+          }
         }
       }
     }

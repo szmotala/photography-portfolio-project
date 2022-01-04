@@ -214,8 +214,10 @@ body {
 
 @media screen and (max-width: 900px) {
   .content .activity .activities {
-    -ms-grid-columns: (minmax(100px, 200px))[3];
-        grid-template-columns: repeat(3, minmax(100px, 200px));
+    -ms-grid-columns: (minmax(30vw, 250px))[3];
+        grid-template-columns: repeat(3, minmax(30vw, 250px));
+    -webkit-column-gap: 5px;
+            column-gap: 5px;
   }
 }
 
@@ -232,13 +234,19 @@ body {
 }
 
 .content .activity .activities .activity-div img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+@supports not (aspect-ratio: 1) {
+  .content .activity .activities .activity-div img {
+    width: 30vw;
+    height: 30vw;
+  }
 }
 
 .content .activity .activity-about {
