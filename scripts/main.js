@@ -42,8 +42,6 @@ function setDataFromImage(imageObj) {
 function setEventsOnDesktop() {
   img_window.setAttribute("onclick", "closeImg()");
 
-  setDataFromImage(image);
-
   prv_btn.setAttribute("onclick", "changeImg(-1)");
   next_btn.setAttribute("onclick", "changeImg(1)");
 }
@@ -92,7 +90,7 @@ images.forEach((image) => {
         array = wedding_imgs;
         break;
     }
-
+    setDataFromImage(image);
     if (
       /Andrdoi|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
