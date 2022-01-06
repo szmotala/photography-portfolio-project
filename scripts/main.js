@@ -82,27 +82,32 @@ function setEventsOnMobile() {
   );
 }
 
-images.forEach((image) => {
-  image.addEventListener("click", () => {
-    currIndex = Number(image.getAttribute("data-index"));
+window.onload = () => {
+  if (navigator.userAgent.match(reg)) {
+    setEventsOnMobile();
+  } else {
+    setEventsOnDesktop();
+  }
 
-    class_val = image.parentElement.classList[1];
+  images.forEach((image) => {
+    image.addEventListener("click", () => {
+      currIndex = Number(image.getAttribute("data-index"));
+      class_val = image.parentElement.classList[1];
 
-    switch (class_val) {
-      case "paris":
-        array = paris_imgs;
-        break;
-      case "wedding":
-        array = wedding_imgs;
-        break;
-    }
-    setDataFromImage(image);
-    if (navigator.userAgent.match(reg)) {
-      setEventsOnMobile();
-      openImgAnimMobile(".img-box", ".img-window");
-    } else {
-      setEventsOnDesktop();
-      openImgAnim(".img-box", ".img-window");
-    }
+      switch (class_val) {
+        case "paris":
+          array = paris_imgs;
+          break;
+        case "wedding":
+          array = wedding_imgs;
+          break;
+      }
+      setDataFromImage(image);
+      if (navigator.userAgent.match(reg)) {
+        openImgAnimMobile(".img-box", ".img-window");
+      } else {
+        openImgAnim(".img-box", ".img-window");
+      }
+    });
   });
-});
+};
