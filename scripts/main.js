@@ -20,9 +20,7 @@ const reg = new RegExp(
 let device;
 
 function closeImg() {
-  img_window.removeAttribute("onclick");
   closeImgAnim(".img-box", ".img-window");
-  currIndex = 0;
 }
 
 function changeImg(direction) {
