@@ -6,7 +6,7 @@ const next_btn = document.querySelector(".next");
 const wedding_imgs = document.querySelector(".content.wedding").children;
 const paris_imgs = document.querySelector(".content.paris").children;
 
-let currIndex;
+let currIndex = 0;
 let class_val;
 let array;
 
@@ -22,6 +22,7 @@ let device;
 function closeImg() {
   img_window.removeAttribute("onclick");
   closeImgAnim(".img-box", ".img-window");
+  currIndex = 0;
 }
 
 function changeImg(direction) {
