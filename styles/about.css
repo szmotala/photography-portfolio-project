@@ -240,7 +240,7 @@ body {
 }
 
 .content .activity .activities .activity-div img {
-  max-width: 100%;
+  width: 100%;
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;

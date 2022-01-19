@@ -155,7 +155,7 @@ main .contact-section .social ul img {
 footer {
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 1rem;
   width: 100%;
   text-align: right;
 }
