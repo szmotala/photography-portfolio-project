@@ -104,6 +104,10 @@ body {
       height: 130vh;
     }
 
+    @media screen and (max-width: 900px) and (orientation: landscape) {
+      height: 50rem;
+    }
+
     .section_h1 {
       font-size: var(--section-h1);
       margin: 0;
