@@ -150,6 +150,9 @@ body {
       background-image: url("../static/images/photographer.webp");
       background-attachment: fixed;
 
+      @supports (not (background-attachment: fixed)) {
+        background-attachment: scroll;
+      }
       @media screen and (max-width: 900px) {
         background-size: cover;
       }

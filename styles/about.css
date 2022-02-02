@@ -199,6 +199,12 @@ body {
   background-attachment: fixed;
 }
 
+@supports not (background-attachment: fixed) {
+  .content .about-me .background_wrap {
+    background-attachment: scroll;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .content .about-me .background_wrap {
     background-size: cover;
