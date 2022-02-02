@@ -176,38 +176,23 @@ body {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
-}
-
-@media screen and (max-width: 900px) {
-  .content .about-me {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-}
-
-.content .about-me .background_wrap {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
   background-color: #000000;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left top;
   background-image: url("../static/images/photographer.webp");
-  background-attachment: fixed;
 }
 
-@supports not (background-attachment: fixed) {
-  .content .about-me .background_wrap {
-    background-attachment: scroll;
+@media screen and (max-width: 1600px) {
+  .content .about-me {
+    background-size: cover;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .content .about-me .background_wrap {
-    background-size: cover;
+  .content .about-me {
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: color-burn;
   }
 }
 

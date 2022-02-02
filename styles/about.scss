@@ -132,30 +132,19 @@ body {
     align-items: flex-end;
     position: relative;
 
-    @media screen and (max-width: 900px) {
-      background-color: rgba($color: #000000, $alpha: 0.6);
+    background-color: #000000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-image: url("../static/images/photographer.webp");
+
+    @media screen and (max-width: 1600px) {
+      background-size: cover;
     }
 
-    .background_wrap {
-      z-index: -1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #000000;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left top;
-      background-image: url("../static/images/photographer.webp");
-      background-attachment: fixed;
-
-      @supports (not (background-attachment: fixed)) {
-        background-attachment: scroll;
-      }
-      @media screen and (max-width: 900px) {
-        background-size: cover;
-      }
+    @media screen and (max-width: 900px) {
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      background-blend-mode: color-burn;
     }
 
     .about-me__text-container {
