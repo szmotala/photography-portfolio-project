@@ -143,7 +143,10 @@ body {
       left: 0;
       height: 100%;
       width: 100%;
-      background-size: 100%;
+      background-color: #000000;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left top;
       background-image: url("/static/images/photographer.webp");
       background-attachment: fixed;
 
