@@ -172,27 +172,43 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
-  background-image: url("../static/images/photographer.png");
+  background-image: url("../static/images/photographer.webp");
   background-repeat: no-repeat;
-  background-position-x: right;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position-x: right top;
 }
 
 @media screen and (max-width: 900px) {
   .content .about-me {
-    background-position-x: 70%;
+    background-color: rgba(45, 45, 45, 0.6);
+    background-size: cover;
+    background-blend-mode: color-burn;
   }
 }
 
-.content .about-me .section_h1 {
+.content .about-me .about-me__text-container {
+  width: 60vw;
+  margin-right: 3vw;
+}
+
+.content .about-me .about-me__text-container .section_h1 {
   color: #cfcfcf;
 }
 
-.content .about-me p {
+.content .about-me .about-me__text-container p {
   color: #afafaf;
+}
+
+@media screen and (max-width: 900px) {
+  .content .about-me .about-me__text-container {
+    width: 90vw;
+    margin: auto;
+  }
 }
 
 .content .activity p {

@@ -3,8 +3,10 @@ const img_window = document.querySelector(".close-box");
 const prv_btn = document.querySelector(".prvs");
 const next_btn = document.querySelector(".next");
 
-const wedding_imgs = document.querySelector(".content.wedding").children;
-const paris_imgs = document.querySelector(".content.paris").children;
+const sections = document.querySelectorAll(".content");
+const section_1 = sections[0].children;
+const section_2 = sections[1].children;
+const section_3 = sections[2].children;
 
 let currIndex = 0;
 let class_val;
@@ -93,11 +95,14 @@ window.onload = () => {
       class_val = image.parentElement.classList[1];
 
       switch (class_val) {
-        case "paris":
-          array = paris_imgs;
+        case "s1":
+          array = section_1;
           break;
-        case "wedding":
-          array = wedding_imgs;
+        case "s2":
+          array = section_2;
+          break;
+        case "s3":
+          array = section_3;
           break;
       }
       setDataFromImage(image);

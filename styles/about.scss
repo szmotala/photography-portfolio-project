@@ -129,22 +129,35 @@ body {
     background-color: black;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
-    background-image: url("../static/images/photographer.png");
+    background-image: url("../static/images/photographer.webp");
     background-repeat: no-repeat;
-    background-position-x: right;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position-x: right top;
 
     @media screen and (max-width: 900px) {
-      background-position-x: 70%;
+      background-color: rgba($color: #2d2d2d, $alpha: 0.6);
+      background-size: cover;
+      background-blend-mode: color-burn;
     }
 
-    .section_h1 {
-      color: #cfcfcf;
-    }
+    .about-me__text-container {
+      width: 60vw;
+      margin-right: 3vw;
+      .section_h1 {
+        color: #cfcfcf;
+      }
 
-    p {
-      color: #afafaf;
+      p {
+        color: #afafaf;
+      }
+
+      @media screen and (max-width: 900px) {
+        width: 90vw;
+        margin: auto;
+      }
     }
   }
 
