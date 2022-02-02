@@ -102,7 +102,7 @@ body {
     height: 100vh;
 
     @media screen and (max-width: 600px) {
-      height: 130vh;
+      height: max-content;
     }
 
     @media screen and (max-width: 900px) and (orientation: landscape) {
@@ -121,6 +121,15 @@ body {
 
       @media screen and (max-width: 900px) {
         font-size: 6vw;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 26px;
+
+      @media screen and (max-width: 900px) {
+        font-size: 18px;
       }
     }
   }
@@ -150,12 +159,19 @@ body {
     .about-me__text-container {
       width: 60vw;
       margin-right: 3vw;
+
+      padding-top: 3vh;
+      padding-bottom: 3vh;
+
       .section_h1 {
-        color: #cfcfcf;
+        color: #ffffff;
+        margin-bottom: 3rem;
       }
 
       p {
-        color: #afafaf;
+        color: #dfdfdf;
+
+        margin-top: 1rem;
       }
 
       @media screen and (max-width: 900px) {

@@ -137,7 +137,9 @@ body {
 
 @media screen and (max-width: 600px) {
   .content .section {
-    height: 130vh;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
   }
 }
 
@@ -161,6 +163,17 @@ body {
 @media screen and (max-width: 900px) {
   .content .section .section_h1 {
     font-size: 6vw;
+  }
+}
+
+.content .section p {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@media screen and (max-width: 900px) {
+  .content .section p {
+    font-size: 18px;
   }
 }
 
@@ -199,14 +212,18 @@ body {
 .content .about-me .about-me__text-container {
   width: 60vw;
   margin-right: 3vw;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
 }
 
 .content .about-me .about-me__text-container .section_h1 {
-  color: #cfcfcf;
+  color: #ffffff;
+  margin-bottom: 3rem;
 }
 
 .content .about-me .about-me__text-container p {
-  color: #afafaf;
+  color: #dfdfdf;
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 900px) {
