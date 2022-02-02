@@ -1,8 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
-sessions = document.querySelectorAll(".section");
-sessions.forEach((session) => {
+sections = document.querySelectorAll(".section:not(.about-me)");
+elements = document.querySelector(".about-me div:not(.background_wrap");
+sections.forEach((section) => {
   gsap.fromTo(
-    session.children,
+    section.children,
     {
       opacity: 0,
       y: "+=50",
@@ -14,12 +15,31 @@ sessions.forEach((session) => {
       duration: 1,
       scrollTrigger: {
         scroller: ".content",
-        trigger: session,
+        trigger: section,
         start: "top 30%",
       },
     }
   );
 });
+
+gsap.fromTo(
+  elements,
+  {
+    opacity: 0,
+    y: "+=50",
+  },
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.3,
+    duration: 1,
+    scrollTrigger: {
+      scroller: ".content",
+      trigger: document.querySelector(".about-me"),
+      start: "top 30%",
+    },
+  }
+);
 
 const activities = document.querySelectorAll(".activity-div");
 
