@@ -101,7 +101,7 @@ main .contact-section .direct a {
 
 @media screen and (max-width: 900px) {
   main .contact-section .direct a {
-    font-size: 5.5vw;
+    font-size: 4vw;
     font-weight: 500;
   }
 }
