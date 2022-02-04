@@ -138,9 +138,7 @@ body {
 
 @media screen and (max-width: 600px) {
   .content .section {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
+    height: 150vh;
   }
 }
 
@@ -246,6 +244,7 @@ body {
 
 .content .activity {
   background-color: #ffffff;
+  height: 130vh;
 }
 
 .content .activity p {

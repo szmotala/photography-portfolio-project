@@ -103,7 +103,7 @@ body {
     height: 100vh;
 
     @media screen and (max-width: 600px) {
-      height: max-content;
+      height: 150vh;
     }
 
     @media screen and (max-width: 900px) and (orientation: landscape) {
@@ -196,6 +196,7 @@ body {
 
   .activity {
     background-color: #ffffff;
+    height: 130vh;
     p {
       color: #2d2d2d;
       margin-top: 1rem;
