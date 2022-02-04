@@ -53,6 +53,7 @@ body {
   height: calc(100vh - var(--nav-bar-height));
   scroll-margin-top: 150px;
   scroll-snap-align: center;
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 900px) {
@@ -177,6 +178,34 @@ body {
   }
 }
 
+.content .about-me__image-wrapper {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  background-image: url("../static/images/photographer.webp");
+  background-color: #000000;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+@media screen and (max-width: 1600px) {
+  .content .about-me__image-wrapper {
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content .about-me__image-wrapper {
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: color-burn;
+  }
+}
+
 .content .about-me {
   width: 100%;
   display: -webkit-box;
@@ -189,24 +218,6 @@ body {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
-  background-color: #000000;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-image: url("../static/images/photographer.webp");
-}
-
-@media screen and (max-width: 1600px) {
-  .content .about-me {
-    background-size: cover;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .content .about-me {
-    background-color: rgba(0, 0, 0, 0.6);
-    background-blend-mode: color-burn;
-  }
 }
 
 .content .about-me .about-me__text-container {
@@ -231,6 +242,10 @@ body {
     width: 90vw;
     margin: auto;
   }
+}
+
+.content .activity {
+  background-color: #ffffff;
 }
 
 .content .activity p {
@@ -319,7 +334,7 @@ body {
 }
 
 .content .social {
-  background-color: black;
+  background-color: #000000;
 }
 
 @media screen and (min-width: 300px) {
