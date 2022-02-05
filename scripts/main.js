@@ -101,8 +101,8 @@ function setEventsOnMobile() {
           e.touches[0].pageY +
           (window.innerHeight / 2 - e.touches[1].pageY);
 
-        newImg.style.transform = `translate(${x / 2}px, ${
-          y / 2
+        newImg.style.transform = `translate(${x / 2 + window.pageXOffset}px, ${
+          y / 2 + window.pageYOffset
         }px) scale(${scale})`;
       }
     }
