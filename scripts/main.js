@@ -3,6 +3,7 @@ const img_window = document.querySelector(".close-box");
 const prv_btn = document.querySelector(".prvs");
 const next_btn = document.querySelector(".next");
 
+const newImg = document.querySelector(".img");
 const sections = document.querySelectorAll(".content");
 const section_1 = sections[0].children;
 const section_2 = sections[1].children;
@@ -13,7 +14,9 @@ let class_val;
 let array;
 
 let startPoint;
-let endPoint;
+let isOpen = false;
+let scalingState = false;
+let changingState = false;
 
 const reg = new RegExp(
   "Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini",
@@ -23,6 +26,7 @@ let device;
 
 function closeImg() {
   closeImgAnim(".img-box", ".img-window");
+  isOpen = false;
 }
 
 function changeImg(direction) {
@@ -37,7 +41,6 @@ function changeImg(direction) {
 }
 
 function setDataFromImage(imageObj) {
-  let newImg = document.querySelector(".img");
   newImg.src = imageObj.src;
   document.querySelector(".img__title").innerHTML =
     imageObj.getAttribute("data-title");
@@ -46,6 +49,11 @@ function setDataFromImage(imageObj) {
 }
 
 function setEventsOnDesktop() {
+  window.addEventListener("keydown", function (event) {
+    if (event.keyCode == "27" && isOpen === true) {
+      closeImg();
+    }
+  });
   img_window.setAttribute("onclick", "closeImg()");
 
   prv_btn.setAttribute("onclick", "changeImg(-1)");
@@ -61,21 +69,62 @@ function setEventsOnMobile() {
     "touchstart",
     (e) => {
       e.preventDefault();
+
+      if (e.touches.length > 1) {
+        scalingState = true;
+        changingState = false;
+      } else {
+        changingState = true;
+        scalingState = false;
+      }
       startPoint = e.touches.item(0);
     },
     false
   );
 
+  img_window.addEventListener("touchmove", (e) => {
+    if (scalingState === true) {
+      newImg.style.transition = "none";
+
+      let scale = Math.hypot(
+        (e.touches[0].pageX - e.touches[1].pageX) / (window.innerWidth / 4),
+        (e.touches[0].pageY - e.touches[1].pageY) / (window.innerHeight / 4)
+      );
+
+      if (scale > 1) {
+        let x =
+          window.innerWidth / 2 -
+          e.touches[0].pageX +
+          (window.innerWidth / 2 - e.touches[1].pageX);
+        let y =
+          window.innerHeight / 2 -
+          e.touches[0].pageY +
+          (window.innerHeight / 2 - e.touches[1].pageY);
+
+        newImg.style.transform = `translate(${x / 2}px, ${
+          y / 2
+        }px) scale(${scale})`;
+      }
+    }
+  });
+
   img_window.addEventListener(
     "touchend",
     (e) => {
-      endPoint = e.changedTouches.item(0);
-      if (endPoint.pageX - startPoint.pageX > screen.width * 0.15) {
-        changeImg(-1);
-      } else if (endPoint.pageX - startPoint.pageX < -screen.width * 0.15) {
-        changeImg(1);
-      } else if (startPoint.pageY - endPoint.pageY > screen.height * 0.1) {
-        closeImgAnimMobile(".img-box", ".img-window");
+      if (changingState === true) {
+        let endPoint = e.changedTouches.item(0);
+        if (endPoint.pageX - startPoint.pageX > screen.width * 0.15) {
+          changeImg(-1);
+        } else if (endPoint.pageX - startPoint.pageX < -screen.width * 0.15) {
+          changeImg(1);
+        } else if (startPoint.pageY - endPoint.pageY > screen.height * 0.1) {
+          closeImgAnimMobile(".img-box", ".img-window");
+          isOpen = false;
+          singleTouch = false;
+        }
+      } else {
+        newImg.style.transition = "all 0.5s";
+        newImg.style.transform = "scale(1)";
       }
     },
     false
@@ -111,6 +160,7 @@ window.onload = () => {
       } else {
         openImgAnim(".img-box", ".img-window");
       }
+      isOpen = true;
     });
   });
 };

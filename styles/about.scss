@@ -166,9 +166,6 @@ body {
     align-items: flex-end;
     position: relative;
 
-    // background-color: #000;
-    // z-index: -2;
-
     .about-me__text-container {
       width: 60vw;
       margin-right: 3vw;
@@ -196,7 +193,8 @@ body {
 
   .activity {
     background-color: #ffffff;
-    height: 130vh;
+    height: 100vh;
+
     p {
       color: #2d2d2d;
       margin-top: 1rem;

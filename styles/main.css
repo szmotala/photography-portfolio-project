@@ -215,6 +215,8 @@ body {
 .img-window .img-box img {
   max-width: 80vw;
   max-height: 80vh;
+  position: relative;
+  z-index: 5;
 }
 
 .img-window .img-box .img__title {
@@ -231,6 +233,7 @@ body {
   font-weight: 400;
   position: absolute;
   text-align: center;
+  z-index: 0;
   width: 100%;
 }
 
