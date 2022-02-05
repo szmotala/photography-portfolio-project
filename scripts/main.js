@@ -83,7 +83,7 @@ function setEventsOnMobile() {
   );
 
   img_window.addEventListener("touchmove", (e) => {
-    if (scalingState === true) {
+    if (scalingState === true && e.touches.length > 1) {
       newImg.style.transition = "none";
 
       let scale = Math.hypot(
